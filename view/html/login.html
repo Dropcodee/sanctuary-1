@@ -48,16 +48,21 @@
                                     <i class="material-icons prefix">assignment_ind</i>
                                     <label for="RegNo">Enter Reg Number:</label>
                                     <input type="number" id="RegNo" class="validate" />
+                                    <span class="reg_err red-text"></span>
                                 </div>
+
                                 <div class="input-field">
                                     <i class="material-icons prefix"> lock_outline</i>
                                     <label for="password" class="active">
                                         Enter Password:
                                     </label>
-                                    <input type="text" id="password" class="validate" />
+                                    <input type="password" id="password" class="validate" />
+                                    <span class="pass_err red-text"></span>
                                 </div>
-                                <button class="btn waves-effect waves-light green">
-                                    Join Us
+                                <span class="show_err red-text"></span>
+                                <span class="show_success green-text"></span><br>
+                                <button class="btn waves-effect waves-light green" id="login">
+                                    Login
                                 </button>
                             </form>
                         </div>
