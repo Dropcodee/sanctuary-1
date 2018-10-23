@@ -24,28 +24,26 @@ $(function() {
     if (reg_no.length < 7) {
       $(regNoErr)
         .html("Registration number must be 7 characters long")
-        .removeClass("success__msg")
-        .addClass("error__msg");
-      $(inputLine).removeClass("success__msg animated shake");
-      $(inputLine).addClass("error__input animated shake");
-      console.log(reg_no);
+        .toggleClass("error__msg");
+      $(inputLine).toggleClass("error__input animated shake");
     }
     if (reg_no.length === 7) {
-      $(regNoErr)
-        .html("Registration number entered")
-        .removeClass("error__msg")
-        .addClass("success__msg");
-      $(inputLine).removeClass("error__input animated shake");
-      $(inputLine).addClass("success__input animated shake");
+      $(regNoErr).html("Registration number entered");
+      $(regNoErr).addClass("success__msg");
+      $(inputLine).addClass("success__input");
+    }
+    if (password.length < 3) {
+      $(passwordErr)
+        .html("password is too short")
+        .toggleClass("error__msg");
+      $(inputLine2).toggleClass("error__input animated shake");
     }
     if (password.length > 3) {
       $(passwordErr)
         .html("password entered")
-        .removeClass("error__msg")
         .addClass("success__msg");
-      $(inputLine).removeClass("error__input animated shake");
-      $(inputLine2).removeClass("error__input animated shake");
-      $(inputLine2).addClass("success__input animated shake");
+      $(inputLine).removeClass("success__input animated shake");
+      $(inputLine2).addClass("success__input");
     } else {
     }
   });
