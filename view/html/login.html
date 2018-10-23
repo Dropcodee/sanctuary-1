@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../dist/css/materialize.min.css">
     <link rel="stylesheet" href="../dist/css/animate.css">
     <link rel="stylesheet" href="../dist/css/style.css">
-    <title> New Member SignUp</title>
+    <title>Login - Sanctuary Unit</title>
 </head>
 
 <body>
@@ -43,27 +43,27 @@
                             <img src="../dist/img/avatar.svg" alt="user avatar" class="circle responsive-img" />
                         </div>
                         <div class="card-content">
-                            <form action="">
-                                <div class="input-field inputVal">
+                            <form action="POST">
+                                <div class="input-field inputVal disabled">
                                     <i class="material-icons prefix">assignment_ind</i>
-                                    <label for="RegNo" class="active">Enter Reg Number:</label>
-                                    <input type="text" id="RegNo" class="" maxlength="7" />
-                                    <span class="helper-text reg__err"> Enter Your Registered Reg Number.</span>
+                                    <label for="RegNo" class="reg_err">Enter Reg Number:</label>
+                                    <input name="RegNo" type="text" id="RegNo" class="validate" maxlength="7"/>
+                                    <!-- <span class="reg_err red-text"></span> -->
                                 </div>
 
                                 <div class="input-field inputVal2">
                                     <i class="material-icons prefix"> lock_outline</i>
-                                    <label for="password" class="active">
+                                    <label for="password" class="pass_err">
                                         Enter Password:
                                     </label>
-                                    <input type="password" id="password" class="" />
-                                    <span class="helper-text pass__err"> Enter Your registered password here.</span>
+                                    <input name="password" type="password" id="password" class="validate" />
                                 </div>
                                 <span class="show_err red-text"></span>
                                 <span class="show_success green-text"></span><br>
                                 <button class="btn waves-effect waves-light green" id="login">
                                     Login
                                 </button>
+                                <span class="animsition-loading"></span>
                             </form>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
     <!-- JAVASCRIPTS FILES HERE -->
     <script src="../dist/js/jquery.js"></script>
     <script src="../dist/js/materialize.min.js"></script>
-    <script src="../dist/js/main.js"></script>
+    <script src="../dist/js/api.js"></script>
 </body>
 
 </html>
