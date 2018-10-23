@@ -44,20 +44,20 @@
                         </div>
                         <div class="card-content">
                             <form action="">
-                                <div class="input-field">
+                                <div class="input-field inputVal">
                                     <i class="material-icons prefix">assignment_ind</i>
-                                    <label for="RegNo">Enter Reg Number:</label>
-                                    <input type="number" id="RegNo" class="validate" />
-                                    <span class="reg_err red-text"></span>
+                                    <label for="RegNo" class="active">Enter Reg Number:</label>
+                                    <input type="text" id="RegNo" class="" maxlength="7" />
+                                    <span class="helper-text reg__err"> Enter Your Registered Reg Number.</span>
                                 </div>
 
-                                <div class="input-field">
+                                <div class="input-field inputVal2">
                                     <i class="material-icons prefix"> lock_outline</i>
                                     <label for="password" class="active">
                                         Enter Password:
                                     </label>
-                                    <input type="password" id="password" class="validate" />
-                                    <span class="pass_err red-text"></span>
+                                    <input type="password" id="password" class="" />
+                                    <span class="helper-text pass__err"> Enter Your registered password here.</span>
                                 </div>
                                 <span class="show_err red-text"></span>
                                 <span class="show_success green-text"></span><br>
@@ -74,7 +74,6 @@
     <!-- JAVASCRIPTS FILES HERE -->
     <script src="../dist/js/jquery.js"></script>
     <script src="../dist/js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <script src="../dist/js/main.js"></script>
 </body>
 
