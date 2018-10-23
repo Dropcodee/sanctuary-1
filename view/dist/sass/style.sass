@@ -59,7 +59,40 @@
     animation-delay: 400ms
 
 /* STYLES FOR NEW REGISTRATION FORM*/
+/* ERROR HANDLING STYLES */
+.error__msg
+    color: $material-red !important
+    transition: all 300ms ease-in-out
+.success__msg
+    color: $material-green !important
+    transition: all 300ms ease-in-out
+.success__input
+    input
+        border-bottom: 2px solid $material-green !important
+        transition: all 300ms ease-in-out
+    .prefix
+        color: $material-green !important
+    label
+        color: $material-green
+    
+.error__input
+    input
+        border-bottom: 2px solid $material-red !important
+        transition: all 300ms ease-in-out
+    .prefix
+        color: $material-red !important
+    label
+        color: $material-red
+.toast__sending
+    background: $material-green
+    color: $material-white
+    font-weight: 500
+.toast__failed
+    background: $material-red
+    color: $material-white
+    font-weight: 500
 
+/* ERROR HANDLING STYLES */
 /* MEDIA QUERIES FOR ALL STYLES */
 @media screen and (min-width: $break-small) 
     .bodydiv
