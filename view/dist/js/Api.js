@@ -1,19 +1,19 @@
 // VALIDATION FOR NEW MEMBERS
-$("#myForm").submit(function(e) {
-  e.preventDefault();
-  // get all the inputs into an array.
-  var $inputs = $("#myForm :input");
-
-  // not sure if you wanted this, but I thought I'd add it.
-  // get an associative array of just the values.
-  let values = {};
-  $inputs.each(function() {
-    values[this.name] = $(this).val();
-    console.log(values);
-  });
-});
 $(() => {
-  $(document).on("keyup", "#signup", () => {
-    let userName = $("#userName");
+  $(document).on("click", "#submit", e => {
+    e.preventDefault();
+    let userName = $("#user_name").val();
+    let newRegNo = $("#newReg").val();
+    let dateOfBirth = $("#DOB").val();
+    let userDept = $("#Dept").val();
+    let userReasons = $("#reasons").val();
+    let userPassword = $("#password_new").val();
+    let checkPassword = $("#checkPass").val();
+    let checkTerms = $("#check_terms").val();
+    let nameError = $(".nameClass");
+    if (userName === "") {
+      $(nameError).addClass("error__input animated shake");
+      console.log("empty");
+    }
   });
 });
