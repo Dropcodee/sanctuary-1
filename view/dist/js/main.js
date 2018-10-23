@@ -13,7 +13,7 @@ $(document).ready(function() {
 });
 
 $(function() {
-  $(document).on("click", "#login", function(e) {
+  $(document).on("keyup", "#password, #RegNo", e => {
     e.preventDefault();
     let reg_no = $("#RegNo").val();
     let password = $("#password").val();
@@ -21,6 +21,42 @@ $(function() {
     let passwordErr = $(".pass__err");
     let inputLine = $(".inputVal");
     let inputLine2 = $(".inputVal2");
+    if (reg_no.length < 7) {
+      $(regNoErr)
+        .html("Registration number must be 7 characters long")
+        .removeClass("success__msg")
+        .addClass("error__msg");
+      $(inputLine).removeClass("success__msg animated shake");
+      $(inputLine).addClass("error__input animated shake");
+      console.log(reg_no);
+    }
+    if (reg_no.length === 7) {
+      $(regNoErr)
+        .html("Registration number entered")
+        .removeClass("error__msg")
+        .addClass("success__msg");
+      $(inputLine).removeClass("error__input animated shake");
+      $(inputLine).addClass("success__input animated shake");
+    }
+    if (password.length > 3) {
+      $(passwordErr)
+        .html("password entered")
+        .removeClass("error__msg")
+        .addClass("success__msg");
+      $(inputLine).removeClass("error__input animated shake");
+      $(inputLine2).removeClass("error__input animated shake");
+      $(inputLine2).addClass("success__input animated shake");
+    } else {
+    }
+  });
+  $(document).on("click", "#login", function(e) {
+    let reg_no = $("#RegNo").val();
+    let password = $("#password").val();
+    let regNoErr = $(".reg__err");
+    let passwordErr = $(".pass__err");
+    let inputLine = $(".inputVal");
+    let inputLine2 = $(".inputVal2");
+    e.preventDefault();
     let err = {
       passwordErr: "Password is Required.",
       regNoErr: "Registration Number Required."
@@ -62,12 +98,14 @@ $(function() {
       $(inputLine).addClass(" error__input" + " animated shake");
     } else {
       $(regNoErr)
-        .html("")
+        .html(" entered")
         .addClass("success__msg");
       $(inputLine).removeClass("error__input" + " animated shake");
       $(inputLine2).removeClass("error__input" + " animated shake");
+      $(inputLine).addClass("success__input" + " animated shake");
+      $(inputLine2).addClass("success__input" + " animated shake");
       $(passwordErr)
-        .html("")
+        .html(" entered")
         .addClass("success__msg");
       $("#login").html("LOADING...");
       M.toast({
@@ -82,7 +120,7 @@ $(function() {
         success: function(data) {
           let data_login = jQuery.parseJSON(data);
           let errorData = JSON.stringify(data_login.error.err_text);
-          let successData = JSON.stringify(data_login.success.err_text);
+          let successData = JSON.stringify(data_login.success.success_text);
           $("#login").html("Login");
           if (data_login.error) {
             $("#login").html("Login");
