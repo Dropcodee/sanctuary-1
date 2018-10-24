@@ -14,20 +14,16 @@
 <body class="bodydiv">
 
     <!-- DIV CONTAINER FOR THE TYPED JS CONTENT-->
-    <div id="barba-wrapper">
-        <div class="barba-container">
-            <div class="container">
-                <div class="col s12 m12 l12">
-                    <div class="landing__wrapper animated bounceIn delay-1s">
-                        <img src="../dist/img/Sanctuary.png" alt="Sanctuary logo" class="animated bounce" id="logoImg">
-                        <div class="landing__content">
-                            <span class="typed"></span>
-                            <h5>MOTTO: SERVICE TO GOD</h5>
-                            <a href="./landing.html">
-                                <button class="btn-large green waves-effect waves-dark"> Welcome</button>
-                            </a>
-                        </div>
-                    </div>
+    <div class="container">
+        <div class="col s12 m12 l12">
+            <div class="landing__wrapper animated bounceIn delay-1s">
+                <img src="../dist/img/Sanctuary.png" alt="Sanctuary logo" class="animated bounce" id="logoImg">
+                <div class="landing__content">
+                    <span class="typed"></span>
+                    <h5>MOTTO: SERVICE TO GOD</h5>
+                    <a href="./Signup.html">
+                        <button class="btn-large green waves-effect waves-dark"> Welcome</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -36,35 +32,10 @@
     <script src="../dist/js/jquery.js"></script>
     <script src="../dist/js/typesMin.js"></script>
     <script src="../dist/js/materialize.min.js"></script>
-    <script src="../dist/js/barba.js"></script>
     <!-- CUSTOM JAVASCRIPTS HERE-->
     <script src="../dist/js/Animatecss.js"></script>
     <script src="../dist/js/Typed.js"></script>
     <script src="../dist/js/main.js"></script>
-    <script>
-         // INITIALIZING BARBA JS FOR PAGE TRANSITION
-    $(document).ready(() => {
-        var transEffect = Barba.BaseTransition.extend({
-            start: function () {
-                this.newContainerLoading.then(val => this.fadeInNewcontent($(this.newContainer)));
-            },
-            fadeInNewcontent: function (nc) {
-                nc.hide();
-                var _this = this;
-                $(this.oldContainer).fadeOut(1000).promise().done(() => {
-                    nc.css('visibility', 'visible');
-                    nc.fadeIn(1000, function () {
-                        _this.done();
-                    })
-                });
-            }
-        });
-        Barba.Pjax.getTransition = function () {
-            return transEffect;
-        }
-        Barba.Pjax.start();
-    });
-    </script>
 </body>
 
 </html>

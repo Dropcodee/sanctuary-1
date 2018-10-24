@@ -11,137 +11,99 @@
     <title> New Member SignUp</title>
 </head>
 
-<body>
+<body id="signup__body">
     <!-- NAVBAR SECTION-->
-    <div class="barba-wrapper">
-        <div class="barba-container">
-            <nav>
-                <div class="nav-wrapper white">
-                    <a href="./index.html" class="brand-logo center black-text">
-                        Sanctuary Unit
+    <nav>
+        <div class="nav-wrapper white">
+            <a href="./index.html" class="brand-logo center black-text">
+                Sanctuary Unit
+            </a>
+            <ul class="right">
+                <li>
+                    <a href="./login.html" class="waves-effect waves-light btn green">
+                        Login
                     </a>
-                    <ul class="right">
-                        <li>
-                            <a href="./login.html" class="waves-effect waves-light btn green">
-                                Login
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- NAVBAR SECTION-->
-            <!-- FORM FOR NEW MEMBER-->
-            <div class="col s12 m12 l12">
-                <div class="container">
-                    <div class="card card__form animated fadeInUp delay-1s">
-                        <div class="top__section green">
-                            <div class="facebook">
-                                <a class="fa fa-facebook" to="#"></a>
-                            </div>
-                        </div>
-                        <div class="avatar">
-                            <img src="../dist/img/avatar.svg" alt="user avatar" class="circle responsive-img" />
-                        </div>
-                        <div class="card-content">
-                            <form action="">
-                                <div class="input-field nameClass">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="user_name" type="text" class="">
-                                    <label for="icon_prefix">Full Name:</label>
-                                </div>
-                                <div class="input-field">
-                                    <i class="material-icons prefix">assignment_ind</i>
-                                    <label for="newReg">Enter Reg Number:</label>
-                                    <input type="number" id="newReg" class="validate" />
-                                </div>
-                                <div class="input-field">
-                                    <i class="material-icons prefix">cake</i>
-                                    <input type="text" id="DOB" class="validate datepicker" placeholder="Choose Your Date of Birth" />
-                                </div>
-                                <div class="input-field">
-                                    <i class="material-icons prefix">wc</i>
-                                    <select placeholder="Choose Your Gender" id="gender">
-                                        <option value="" selected disabled>Choose your Gender</option>
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
-                                    </select>
-                                </div>
-                                <div class="input-field">
-                                    <i class="material-icons prefix">school</i>
-                                    <label for="Dept" class="active">
-                                        Enter Your Department:
-                                    </label>
-                                    <input type="text" id="Dept" class="validate" />
-                                </div>
-                                <div class="input-field">
-                                    <i class="material-icons prefix">swap_vert</i>
-                                    <select id="level">
-                                        <option value="" disabled selected>Choose your Level
-                                        </option>
-                                        <option value="1">100l</option>
-                                        <option value="2">200l</option>
-                                        <option value="3">300l</option>
-                                        <option value="4">400l</option>
-                                        <option value="5">500l</option>
-                                    </select>
-                                </div>
-                                <div class="input-field">
-                                    <i class="material-icons prefix"> bubble_chart</i>
-                                    <textarea id="reasons" class="materialize-textarea"></textarea>
-                                    <label for="reasons">
-                                        Enter Your Reasons for joining Sanctuary Unit
-                                    </label>
-                                </div>
-                                <div class="input-field">
-                                    <i class="material-icons prefix"> lock_outline</i>
-                                    <label for="password_new" class="active">
-                                        Enter Password:
-                                    </label>
-                                    <input type="text" id="password" class="validate" />
-                                </div>
-                                <div class="input-field">
-                                    <i class="material-icons prefix"> lock_outline</i>
-                                    <label for="checkPass" class="active">
-                                        Re-Type Password:
-                                    </label>
-                                    <input type="text" id="checkPass" class="validate" />
-                                </div>
-                                <div class="terms__btn">
-                                    <a href="#modal1" class="modal-trigger">
-                                        <p>
-                                            <label>
-                                                <input type="checkbox" checked="checked" id="check_terms" />
-                                                <span>Our Terms and Conditions</span>
-                                            </label>
-                                        </p>
-                                    </a>
-                                </div>
-
-                                <!-- Modal Structure -->
-                                <div id="modal1" class="modal">
-                                    <div class="modal-content">
-                                        <h4>Sanctuary Terms and Conditions</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ducimus, nemo
-                                            voluptatum ullam magnam reprehenderit, laboriosam velit rerum, veritatis
-                                            sunt vitae quae sint! Ut, delectus? Assumenda quod sunt eaque corrupti!</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                                    </div>
-                                </div>
-
-                                <button class="btn waves-effect waves-light green white-text" type="submit" id="submit">Join
-                                    Us</button>
-                            </form>
-                        </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- NAVBAR SECTION-->
+    <!-- FORM FOR NEW MEMBER-->
+    <div class="modal-wrap">
+        <div class="modal-header"><span class="is-active"></span><span></span><span></span></div>
+        <div class="modal-bodies">
+            <div class="modal-body modal-body-step-1 is-showing">
+                <div class="title">Step 1</div>
+                <div class="description">Hello, Welcome to Sanctuary Unit, Kindly fill out the forms thanks. Both
+                    newand existing
+                    members. </div>
+                <form>
+                    <div class="input-field">
+                        <input id="sur_name" type="text" class="validate">
+                        <label for="sur_name">Enter Your SurName:</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Enter your surname first
+                            please.</span>
                     </div>
+                    <div class="input-field">
+                        <input id="main_name" type="text" class="validate">
+                        <label for="main_name"> Enter Your Names: </label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Enter your first name and
+                            other names.</span>
+                    </div>
+                    <div class="input-field">
+                        <input id="webmail" type="email" class="validate">
+                        <label for="webmail">Webmail:</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Enter your
+                            webmail(hidden.hyve@lmu.edu.ng)</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="button waves-effect waves-dark">Start</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body modal-body-step-2">
+                <div class="title">Step 2</div>
+                <div class="description">You Are Almost There...</div>
+                <form>
+                    <div class="input-field">
+                        <input id="sur_name" type="text" class="validate">
+                        <label for="sur_name">Enter Your Department:</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Enter your surname first
+                            please.</span>
+                    </div>
+                    <div class="input-field">
+                        <input id="main_name" type="text" class="validate">
+                        <label for="main_name"> Enter Your Names: </label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Enter your first name and
+                            other names.</span>
+                    </div>
+                    <div class="input-field">
+                        <input id="webmail" type="email" class="validate">
+                        <label for="webmail">Webmail:</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Enter your
+                            webmail(hidden.hyve@lmu.edu.ng)</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="button waves-effect waves-dark">Start</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body modal-body-step-3">
+                <div class="title">Step 3</div>
+                <div class="description">Check your email for the game results.</div>
+                <div class="text-center">
+                    <div class="button">Done!</div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="text-center">
+        <div class="rerun-button">ReRun</div>
+    </div>
     <!-- JAVASCRIPTS FILES HERE -->
     <script src="../dist/js/jquery.js"></script>
     <script src="../dist/js/materialize.min.js"></script>
+    <script src="../dist/js/Animatecss.js"></script>
     <script src="../dist/js/Api.js"></script>
     <script src="../dist/js/main.js"></script>
 </body>
