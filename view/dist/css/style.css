@@ -194,7 +194,7 @@ html {
   display: block; }
 
 .animate-up {
-  transform: translateY(-500px) rotate(30deg); }
+  transform: translateY(-800px) rotate(30deg); }
 
 @keyframes out {
   0% {

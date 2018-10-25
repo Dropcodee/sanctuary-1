@@ -13,7 +13,6 @@ $(() => {
     let nameError = $(".nameClass");
     if (userName === "") {
       $(nameError).addClass("error__input animated shake");
-      console.log("empty");
     }
   });
 });
