@@ -36,7 +36,7 @@ $(".button").click(function() {
     stepIndex = $step.index(),
     $pag = $(".modal-header span").eq(stepIndex);
 
-  if (stepIndex === 0 || stepIndex === 1) {
+  if (stepIndex === 0 || stepIndex === 1 || stepIndex === 2) {
     step1($step, $pag);
   } else {
     step3($step, $pag);

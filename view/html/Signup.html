@@ -30,7 +30,7 @@
     <!-- NAVBAR SECTION-->
     <!-- FORM FOR NEW MEMBER-->
     <div class="modal-wrap">
-        <div class="modal-header"><span class="is-active"></span><span></span><span></span></div>
+        <div class="modal-header"><span class="is-active"></span><span></span><span></span><span></span><span></span></div>
         <div class="modal-bodies">
             <div class="modal-body modal-body-step-1 is-showing">
                 <div class="title">Step 1</div>
@@ -39,25 +39,34 @@
                     members. </div>
                 <form>
                     <div class="input-field">
+                        <i class="material-icons prefix">account_circle</i>
                         <input id="sur_name" type="text" class="validate">
                         <label for="sur_name">Enter Your SurName:</label>
-                        <span class="helper-text" data-error="wrong" data-success="right">Enter your surname first
-                            please.</span>
+                        <span class="helper-text" data-error="wrong" data-success="right">Enter your surname alone.</span>
                     </div>
                     <div class="input-field">
+                        <i class="material-icons prefix">account_box</i>
                         <input id="main_name" type="text" class="validate">
                         <label for="main_name"> Enter Your Names: </label>
                         <span class="helper-text" data-error="wrong" data-success="right">Enter your first name and
                             other names.</span>
                     </div>
                     <div class="input-field">
+                        <i class="material-icons prefix">email</i>
                         <input id="webmail" type="email" class="validate">
                         <label for="webmail">Webmail:</label>
                         <span class="helper-text" data-error="wrong" data-success="right">Enter your
                             webmail(hidden.hyve@lmu.edu.ng)</span>
                     </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">business</i>
+                        <input id="room_no" type="text" class="validate" maxlength="7">
+                        <label for="room_no"> Enter your Registration Number: </label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Enter Registration
+                            Number(1600001).</span>
+                    </div>
                     <div class="text-center">
-                        <div class="button waves-effect waves-dark">Start</div>
+                        <div class="button waves-effect waves-dark">Next</div>
                     </div>
                 </form>
             </div>
@@ -66,39 +75,122 @@
                 <div class="description">You Are Almost There...</div>
                 <form>
                     <div class="input-field">
-                        <input id="sur_name" type="text" class="validate">
-                        <label for="sur_name">Enter Your Department:</label>
-                        <span class="helper-text" data-error="wrong" data-success="right">Enter your surname first
-                            please.</span>
+                        <i class="material-icons prefix">domain</i>
+                        <select>
+                            <option value="" disabled selected>Hall Of Residence</option>
+                            <option value="1">Daniel Hall</option>
+                            <option value="2">Abraham Hall</option>
+                            <option value="3">Joseph Hall</option>
+                            <option value="4">Issac Hall</option>
+
+                            <option value="5">Dorcas Hall</option>
+                            <option value="6">Sarah Hall</option>
+                            <option value="7">Deborah Hall</option>
+                            <option value="8">Abigal Hall</option>
+                        </select>
                     </div>
                     <div class="input-field">
-                        <input id="main_name" type="text" class="validate">
-                        <label for="main_name"> Enter Your Names: </label>
-                        <span class="helper-text" data-error="wrong" data-success="right">Enter your first name and
-                            other names.</span>
+                        <i class="material-icons prefix">business</i>
+                        <input id="room_no" type="text" class="validate">
+                        <label for="room_no"> Enter your Room Number: </label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Enter Room Number here(F302).</span>
                     </div>
                     <div class="input-field">
-                        <input id="webmail" type="email" class="validate">
-                        <label for="webmail">Webmail:</label>
-                        <span class="helper-text" data-error="wrong" data-success="right">Enter your
-                            webmail(hidden.hyve@lmu.edu.ng)</span>
+                        <i class="material-icons prefix">wc</i>
+                        <select placeholder="Choose Your Gender">
+                            <option value="" selected disabled>Choose your Gender</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">cake</i>
+                        <input type="text" id="DOB" class="validate datepicker" placeholder="Choose Your Date of Birth" />
                     </div>
                     <div class="text-center">
-                        <div class="button waves-effect waves-dark">Start</div>
+                        <div class="button waves-effect waves-dark">Next</div>
                     </div>
                 </form>
             </div>
             <div class="modal-body modal-body-step-3">
                 <div class="title">Step 3</div>
-                <div class="description">Check your email for the game results.</div>
+                <div class="description">Your Almost There...</div>
+                <form>
+                    <div class="input-field">
+                        <i class="material-icons prefix">swap_vert</i>
+                        <select>
+                            <option value="" disabled selected>Enter Your Level</option>
+                            <option value="1">100L</option>
+                            <option value="2">200L</option>
+                            <option value="3">300L</option>
+                            <option value="4">400L</option>
+                            <option value="5">500L</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">group_work</i>
+                        <select>
+                            <option value="" disabled selected>Enter Your Department</option>
+                            <option value="1">Computer Science</option>
+                            <option value="2">Mechanical Engineering</option>
+                            <option value="3">Electrical and Information Engineering</option>
+                            <option value="4">Industrial mathematics</option>
+
+                            <option value="5">Industrial Chemistry</option>
+                            <option value="6">Chemical Engineering</option>
+                            <option value="7">Micro Biology</option>
+                            <option value="8"></option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix"> lock_outline</i>
+                        <label htmlFor="password" class="active">
+                            Enter Password:
+                        </label>
+                        <input type="text" id="password" class="validate" />
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix"> lock_outline</i>
+                        <label htmlFor="checkPass" class="active">
+                            Re-Type Password:
+                        </label>
+                        <input type="text" id="checkPass" class="validate" />
+                    </div>
+                    <div class="text-center">
+                        <div class="button waves-effect waves-dark">Next.</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body modal-body-step-4">
+                <div class="title">Step 4</div>
+                <div class="description">Finally...</div>
+                <div class="description"> Select if you are a new member or an existing member
+                </div>
+                <form>
+                    <div class="input-field">
+                        <i class="material-icons prefix">swap_vert</i>
+                        <select>
+                            <option value="" disabled selected> New Or Existing</option>
+                            <option value="1">New Member</option>
+                            <option value="2">Existing Member</option>
+                        </select>
+                    </div>
+                </form>
                 <div class="text-center">
-                    <div class="button">Done!</div>
+                    <div class="button waves-effect waves-dark">Next</div>
+                </div>
+            </div>
+            <div class="modal-body modal-body-step-5">
+                <div class="title">Step 5</div>
+                <div class="description">Finally...</div>
+                <div class="description">Thanks for applying to Sanctuary unit, your application is being processed
+                    currently. A mail will be sent to you after 24hours Thank You.
+                </div>
+                <div class="text-center">
+                    <div class="rerun-button">ReRun</div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="text-center">
-        <div class="rerun-button">ReRun</div>
     </div>
     <!-- JAVASCRIPTS FILES HERE -->
     <script src="../dist/js/jquery.js"></script>
