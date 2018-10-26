@@ -2,17 +2,42 @@
 $(() => {
   $(document).on("click", "#submit", e => {
     e.preventDefault();
-    let userName = $("#user_name").val();
-    let newRegNo = $("#newReg").val();
-    let dateOfBirth = $("#DOB").val();
-    let userDept = $("#Dept").val();
-    let userReasons = $("#reasons").val();
-    let userPassword = $("#password_new").val();
-    let checkPassword = $("#checkPass").val();
-    let checkTerms = $("#check_terms").val();
-    let nameError = $(".nameClass");
-    if (userName === "") {
-      $(nameError).addClass("error__input animated shake");
+    let surname = $("#surname").val();
+    let firstname = $("#fistname").val(),
+      RegNo = $("#RegNo").val(),
+      webmail = $("#webmail").val(),
+      dob = $("#dob").val(),
+      dept = $("#dept").val(),
+      gender = $("#gender").val(),
+      level = $("#level").val(),
+      reasons = $("#reasons").val(),
+      password = $("#password").val(),
+      checkPass = $("#checkPass").val();
+    if (
+      surname === "" ||
+      firstname === "" ||
+      RegNo === "" ||
+      webmail === "" ||
+      dob === "" ||
+      dept === "" ||
+      gender === "" ||
+      level === "" ||
+      reasons === "" ||
+      password === "" ||
+      checkPass === ""
+    ) {
+      M.toast({
+        html: "All fields required",
+        classes: "toast__failed"
+      });
+    } else if (surname.length < 3) {
+      $(".surname_err")
+        .html("Surname length must be greater than 2 characters")
+        .addClass("red-text");
+    } else {
+      $("#submit").addClass("disabled");
+      $("input").attr("disabled", true);
+      $(".animsition-loading").show();
     }
   });
 });

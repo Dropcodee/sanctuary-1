@@ -13,20 +13,22 @@
 
 <body id="signup__body">
     <!-- NAVBAR SECTION-->
-    <nav>
-        <div class="nav-wrapper white">
-            <a href="./index.html" class="brand-logo center black-text">
-                Sanctuary Unit
-            </a>
-            <ul class="right">
-                <li>
-                    <a href="./login.html" class="waves-effect waves-light btn green">
-                        Login
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper white">
+                <a href="./index.html" class="brand-logo center black-text">
+                    Sanctuary Unit
+                </a>
+                <ul class="right">
+                    <li>
+                        <a href="./login.html" class="waves-effect waves-light btn green">
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
     <!-- NAVBAR SECTION-->
     <!-- FORM FOR NEW MEMBER-->
     <div class="col s12 m12 l12">
@@ -41,71 +43,87 @@
             </div>
             <div class="card-content">
                 <form action="">
-                    <div class="input-field">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="icon_prefix" type="text" class="validate">
-                        <label for="icon_prefix">Full Name:</label>
+                    <div class="row">
+                        <div class="col s12 m6 l6">
+                            <div class="input-field inputVal_surname">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input type="text" class="validate" id="surname">
+                                <span class="helper-text surname_err"></span>
+                                <label for="icon_prefix">Surname:</label>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <div class="input-field inputVal_firstname">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input type="text" class="validate" id="firstname">
+                                <span class="helper-text firstname_err"></span>
+                                <label for="icon_prefix">First name:</label>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <div class="input-field inputVal_reg">
+                                <i class="material-icons prefix">assignment_ind</i>
+                                <label for="RegNo">Enter Reg Number:</label>
+                                <input type="text" id="RegNo" class="validate" maxlength="7" />
+                                <span class="helper-text reg_err"></span>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <div class="input-field inputVal_webmail">
+                                <i class="material-icons prefix">assignment_ind</i>
+                                <label for="webmail">Webmail:</label>
+                                <input type="email" id="webmail" class="validate" />
+                                <span class="helper-text email_err"></span>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <div class="input-field">
+                                <i class="material-icons prefix">account_circle</i>
+                                <select name="member" id="member" style="margin: 0px;">
+                                    <option value="New Member">New Member</option>
+                                    <option value="Existing Member">Existing Member</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <div class="input-field inputVal_reasons">
+                                <i class="material-icons prefix"> bubble_chart</i>
+                                <textarea id="reasons" class="materialize-textarea"></textarea>
+                                <span class="helper-text reasons_err"></span>
+                                <label for="reasons">
+                                    Reasons for joining
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <div class="input-field inputVal_password">
+                                <i class="material-icons prefix"> lock_outline</i>
+                                <label htmlFor="password" class="active">
+                                    Enter Password:
+                                </label>
+                                <input type="text" id="password" class="validate" />
+                                <span class="helper-text pass_err"></span>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <div class="input-field inputVal_checkPass">
+                                <i class="material-icons prefix"> lock_outline</i>
+                                <label htmlFor="checkPass" class="active">
+                                    Re-Type Password:
+                                </label>
+                                <input type="text" id="checkPass" class="validate" />
+                                <span class="helper-text checkpass_err"></span>
+                            </div>
+                        </div>
+                        <div class="col s12">
+                            <span class="helper-text err center"></span>
+                        </div>
+
                     </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">assignment_ind</i>
-                        <label for="RegNo">Enter Reg Number:</label>
-                        <input type="number" id="RegNo" class="validate" />
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">cake</i>
-                        <input type="text" id="DOB" class="validate datepicker" placeholder="Choose Your Date of Birth" />
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">wc</i>
-                        <select placeholder="Choose Your Gender">
-                            <option value="" selected disabled>Choose your Gender</option>
-                            <option value="1">Male</option>
-                            <option value="2">Female</option>
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">school</i>
-                        <label for="Dept" class="active">
-                            Enter Your Department:
-                        </label>
-                        <input type="text" id="Dept" class="validate" />
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">swap_vert</i>
-                        <select>
-                            <option value="" disabled selected>Choose your Level
-                            </option>
-                            <option value="1">100l</option>
-                            <option value="2">200l</option>
-                            <option value="2">300l</option>
-                            <option value="2">400l</option>
-                            <option value="2">500l</option>
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix"> bubble_chart</i>
-                        <textarea id="reasons" class="materialize-textarea"></textarea>
-                        <label for="reasons">
-                            Enter Your Reasons for joining Sanctuary Unit
-                        </label>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix"> lock_outline</i>
-                        <label htmlFor="password" class="active">
-                            Enter Password:
-                        </label>
-                        <input type="text" id="password" class="validate" />
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix"> lock_outline</i>
-                        <label htmlFor="checkPass" class="active">
-                            Re-Type Password:
-                        </label>
-                        <input type="text" id="checkPass" class="validate" />
-                    </div>
-                    <button class="btn waves-effect waves-light green">
+                    <button class="btn waves-effect waves-light green right large" id="submit">
                         Sign Up
                     </button>
+                    <span class="animsition-loading"></span>
                 </form>
             </div>
         </div>
