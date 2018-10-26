@@ -1,27 +1,23 @@
 // VALIDATION FOR NEW MEMBERS
+var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+var webmailValidate = /^([\w-\.]+@(?!lmu.edu.ng)([\w-]+\.)+[\w-]{2,4})?$/;
+var regValidate = /[0-9]/;
 $(() => {
   $(document).on("click", "#submit", e => {
     e.preventDefault();
-    let surname = $("#surname").val();
-    let firstname = $("#fistname").val(),
-      RegNo = $("#RegNo").val(),
+    let surname = $("#surname").val(),
+      firstname = $("#firstname").val(),
+      RegNo = $("#reg_no").val(),
       webmail = $("#webmail").val(),
-      dob = $("#dob").val(),
-      dept = $("#dept").val(),
-      gender = $("#gender").val(),
-      level = $("#level").val(),
+      member = $("#member").val(),
       reasons = $("#reasons").val(),
-      password = $("#password").val(),
+      password = $("#pass").val(),
       checkPass = $("#checkPass").val();
     if (
       surname === "" ||
       firstname === "" ||
       RegNo === "" ||
       webmail === "" ||
-      dob === "" ||
-      dept === "" ||
-      gender === "" ||
-      level === "" ||
       reasons === "" ||
       password === "" ||
       checkPass === ""
@@ -34,10 +30,142 @@ $(() => {
       $(".surname_err")
         .html("Surname length must be greater than 2 characters")
         .addClass("red-text");
+      M.toast({
+        html: "Surname length must be greater than 2 characters",
+        classes: "toast__failed"
+      });
+    } else if (firstname.length < 3) {
+      $(".firstname_err")
+        .html("Firstname length too short")
+        .addClass("red-text");
+      M.toast({
+        html: "Firstname length too short",
+        classes: "toast__failed"
+      });
+    } else if (!regValidate.test(RegNo)) {
+      $(".reg_err")
+        .html("Registration number must be a number")
+        .addClass("red-text");
+      M.toast({
+        html: "Registration number must be a number",
+        classes: "toast__failed"
+      });
+    } else if (!emailReg.test(webmail)) {
+      $(".webmail_err")
+        .html("Please enter a valid webmail")
+        .addClass("red-text");
+      M.toast({
+        html: "Please enter a valid webmail",
+        classes: "toast__failed"
+      });
+    } else if (webmailValidate.test(webmail)) {
+      $(".webmail_err")
+        .html("Webmail must end with @lmu.edu.ng")
+        .addClass("red-text");
+      M.toast({
+        html: "Webmail must end with @lmu.edu.ng",
+        classes: "toast__failed"
+      });
+    } else if (reasons.length < 30) {
+      $(".reasons_err")
+        .html("Write more reasons to join, don't be shy")
+        .addClass("red-text");
+      M.toast({
+        html: "Write more things, don't be shy",
+        classes: "toast__failed"
+      });
+    } else if (password.length < 8) {
+      $(".pass_err")
+        .html("Your password too is short")
+        .addClass("red-text");
+      M.toast({
+        html: "Your password too is short",
+        classes: "toast__failed"
+      });
+    } else if (checkPass !== password) {
+      $(".checkpass_err")
+        .html("Confirm password don't match")
+        .addClass("red-text");
+      M.toast({
+        html: "Confirm password don't match",
+        classes: "toast__failed"
+      });
     } else {
+      var fullname = surname + firstname;
+      $(".surname_err")
+        .html("")
+        .removeClass("red-text");
+      $(".firstname_err")
+        .html("")
+        .removeClass("red-text");
+      $(".reg_err")
+        .html("")
+        .removeClass("red-text");
+      $(".webmail_err")
+        .html("")
+        .removeClass("red-text");
+      $(".reasons_err")
+        .html("")
+        .removeClass("red-text");
+      $(".pass_err")
+        .html("")
+        .removeClass("red-text");
+      $(".checkpass_err")
+        .html("")
+        .removeClass("red-text");
       $("#submit").addClass("disabled");
       $("input").attr("disabled", true);
       $(".animsition-loading").show();
+      $.ajax({
+        method: "POST",
+        url: "https://sanc-server.herokuapp.com/public/add",
+        data: {
+          name: fullname,
+          reg_no: RegNo,
+          webmail: webmail,
+          membership: member,
+          reasons: reasons,
+          password: checkPass
+        },
+        cache: false,
+        success: res => {
+          var data_signup = jQuery.parseJSON(res);
+          if (data_signup.error) {
+            console.log(data_signup.error);
+            M.toast({
+              html: data_signup.error.err_text,
+              classes: "toast__failed rounded"
+            });
+            $("#submit")
+              .html("Sign Up")
+              .removeClass("disabled");
+            $(".animsition-loading").hide();
+            $("input").attr("disabled", false);
+          } else {
+            console.log(data_signup.success);
+            M.toast({
+              html: data_signup.success.success_text,
+              classes: "toast__sending rounded"
+            });
+            $(".animsition-loading").hide();
+            $("input").attr("disabled", false);
+            $(".show_err").html("");
+            // window.location = "login.html";
+          }
+        },
+        error: function() {
+          M.toast({
+            html: "Sorry Sanctuary Unit couldn't connect to the server",
+            classes: "toast__success rounded"
+          });
+
+          $("#submit")
+            .html("Sign Up")
+            .removeClass("disabled");
+          $("input").attr("disabled", false);
+          $(".animsition-loading").hide();
+        }
+      });
     }
   });
 });
