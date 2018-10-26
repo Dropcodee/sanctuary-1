@@ -16,7 +16,9 @@ $(() => {
     }
   });
 });
+// VALIDATION FOR NEW MEMBERS
 
+// VALIDATION FOR LOGIN FORM
 $(function() {
   let re, reg_no, password;
   $(document).on("keyup", "#RegNo, #password", function(e) {
@@ -149,3 +151,4 @@ $(function() {
     }
   });
 });
+// VALIDATION FOR LOGIN FORM
