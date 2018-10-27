@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="../dist/css/materialize.min.css">
-    <link rel="stylesheet" href="../dist/css/animate.css">
-    <link rel="stylesheet" href="../dist/css/animsition.min.css">
-    <link rel="stylesheet" href="../dist/css/style.css">
-    <title> New Member SignUp</title>
-    </style>
-</head>
+<?php
+    include "./inc/head.php";
+?>
 
 <body id="signup__body">
     <!-- NAVBAR SECTION-->
@@ -19,12 +8,12 @@
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper white">
-                    <a href="./index.html" class="brand-logo center black-text">
+                    <a href="./index.php" class="brand-logo center black-text">
                         Sanctuary Unit
                     </a>
                     <ul class="right">
                         <li>
-                            <a href="./login.html" class="waves-effect waves-light btn green animsition-link">
+                            <a href="./login.php" class="waves-effect waves-light btn green animsition-link">
                                 Login
                             </a>
                         </li>
@@ -132,41 +121,17 @@
             </div>
         </div>
         <!-- FORM FOR NEW MEMBER-->
-        <footer class="page-footer green">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Sanctuary Unit</h5>
-                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
-                            content.</p>
-                    </div>
-                    <div class="col l4 offset-l2 s12">
-                        <h5 class="white-text">Links</h5>
-                        <ul>
-                            <li><a class="grey-text text-lighten-3" href="https://lmu.edu.ng/">Landmark University.</a></li>
-                            <li><a class="grey-text text-lighten-3" href="http://webmail2.lmu.edu.ng">Webmail</a></li>
-                            <li><a class="grey-text text-lighten-3" href="http://att.lmu.edu.ng">Attendance Portal</a></li>
-                            <li><a class="grey-text text-lighten-3" href="http://www.hiddenhyve.org/">Hiiden Hyve</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2018 Sanctuary Unit
-                    <a class="grey-text text-lighten-4 right" href="http://www.hiddenhyve.org/">Powered By - Hidden
-                        Hyve.</a>
-                </div>
-            </div>
-        </footer>
+        <!-- FOOTER SECTION-->
+        <?php
+        include "./inc/footer.php"
+        ?>
+        <!-- FOOTER SECTION-->
     </div>
     <!-- JAVASCRIPTS FILES HERE -->
-    <script src="../dist/js/jquery.js"></script>
-    <script src="../dist/js/animsition.min.js"></script>
-    <script src="../dist/js/materialize.min.js"></script>
-    <script src="../dist/js/Animatecss.js"></script>
+    <?php
+    include "./inc/scripts.php";
+    ?>
     <script src="../dist/js/Api.js"></script>
-    <script src="../dist/js/main.js"></script>
 </body>
 
 </html>

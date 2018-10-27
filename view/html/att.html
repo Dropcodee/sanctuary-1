@@ -1,0 +1,31 @@
+<script src="../dist/js/jquery.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+    function calc2(form) {
+reg = form.reg.value;
+if(reg !== "") {
+    point = 50;
+    estimate = 500;
+    att = 1;
+    $.post('http://localhost/sanctuary-1/view/php/att.php', {reg_no: reg}, function(data) {
+        var data = jQuery.parseJSON(data);
+        console.log(data.reg_no)
+    });
+    calculation = point/estimate;
+    total_point = calculation*100;
+    point = point + 50;
+    console.log(`${total_point}%`);
+    
+} else {
+    console.log("Reg number required")
+}
+
+}
+</script>
+
+
+<center>
+    <form name="form1">
+        <input type="text" name="reg" placeholder="Enter Reg Number">
+        <input type="text" name="total2" size=5> %<input type="button" value="Calculate" onClick="calc2(this.form)">
+    </form>
+</center>
