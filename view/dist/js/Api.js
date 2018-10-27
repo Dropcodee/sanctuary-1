@@ -115,7 +115,7 @@ $(() => {
         .removeClass("red-text");
       $("#submit").addClass("disabled");
       $("input").attr("disabled", true);
-      $(".animsition-loading").show();
+      $(".signup-loading").show();
       $.ajax({
         method: "POST",
         url: "https://sanc-server.herokuapp.com/public/add",
@@ -139,7 +139,7 @@ $(() => {
             $("#submit")
               .html("Sign Up")
               .removeClass("disabled");
-            $(".animsition-loading").hide();
+            $(".signup-loading").hide();
             $("input").attr("disabled", false);
           } else {
             console.log(data_signup.success);
@@ -147,7 +147,7 @@ $(() => {
               html: data_signup.success.success_text,
               classes: "toast__sending rounded"
             });
-            $(".animsition-loading").hide();
+            $(".signup-loading").hide();
             $("input").attr("disabled", false);
             $(".show_err").html("");
             // window.location = "login.html";
@@ -163,7 +163,7 @@ $(() => {
             .html("Sign Up")
             .removeClass("disabled");
           $("input").attr("disabled", false);
-          $(".animsition-loading").hide();
+          $(".signup-loading").hide();
         }
       });
     }
@@ -257,7 +257,7 @@ $(function() {
         .addClass("vaild");
       $("#login").addClass("disabled");
       $("input").attr("disabled", true);
-      $(".animsition-loading").show();
+      $(".signup-loading").show();
       $.ajax({
         method: "POST",
         url: "https://sanc-server.herokuapp.com/public/login",
@@ -274,7 +274,7 @@ $(function() {
             $("#login")
               .html("Login")
               .removeClass("disabled");
-            $(".animsition-loading").hide();
+            $(".signup-loading").hide();
             $("input").attr("disabled", false);
           } else {
             console.log(data_login.success);
@@ -282,7 +282,7 @@ $(function() {
               html: data_login.success.success_text,
               classes: "toast__sending rounded"
             });
-            $(".animsition-loading").hide();
+            $(".signup-loading").hide();
             $("input").attr("disabled", false);
             $(".show_err").html("");
             window.location = "index.html";
@@ -298,7 +298,7 @@ $(function() {
             .html("Login")
             .removeClass("disabled");
           $("input").attr("disabled", false);
-          $(".animsition-loading").hide();
+          $(".signup-loading").hide();
         }
       });
     }

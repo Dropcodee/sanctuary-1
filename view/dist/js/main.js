@@ -11,3 +11,11 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(".datepicker").datepicker();
 });
+$(document).ready(function() {
+  $(".sidenav").sidenav();
+});
+
+// INITIALIZING THE SCROLLSPY
+$(document).ready(function() {
+  $(".scrollspy").scrollSpy();
+});

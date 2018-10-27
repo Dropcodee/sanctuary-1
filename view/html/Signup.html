@@ -7,131 +7,162 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../dist/css/materialize.min.css">
     <link rel="stylesheet" href="../dist/css/animate.css">
+    <link rel="stylesheet" href="../dist/css/animsition.min.css">
     <link rel="stylesheet" href="../dist/css/style.css">
     <title> New Member SignUp</title>
+    </style>
 </head>
 
 <body id="signup__body">
     <!-- NAVBAR SECTION-->
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper white">
-                <a href="./index.html" class="brand-logo center black-text">
-                    Sanctuary Unit
-                </a>
-                <ul class="right">
-                    <li>
-                        <a href="./login.html" class="waves-effect waves-light btn green">
-                            Login
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <!-- NAVBAR SECTION-->
-    <!-- FORM FOR NEW MEMBER-->
-    <div class="col s12 m12 l12">
-        <div class="card card__form animated fadeInUp delay-1s">
-            <div class="top__section green">
-                <div class="facebook">
-                    <a class="fa fa-facebook" to="#"></a>
+    <div class="animsition">
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper white">
+                    <a href="./index.html" class="brand-logo center black-text">
+                        Sanctuary Unit
+                    </a>
+                    <ul class="right">
+                        <li>
+                            <a href="./login.html" class="waves-effect waves-light btn green animsition-link">
+                                Login
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- NAVBAR SECTION-->
+        <!-- FORM FOR NEW MEMBER-->
+        <div class="col s12 m12 l12">
+            <div class="card card__form">
+                <div class="top__section green">
+                    <div class="facebook">
+                        <a class="fa fa-facebook" to="#"></a>
+                    </div>
+                </div>
+                <div class="avatar">
+                    <img src="../dist/img/avatar.svg" alt="user avatar" class="circle responsive-img" />
+                </div>
+                <div class="card-content">
+                    <form action="">
+                        <div class="row">
+                            <div class="col s12 m6 l6">
+                                <div class="input-field inputVal">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input type="text" class="validate" id="surname">
+                                    <span class="helper-text surname_err"></span>
+                                    <label for="icon_prefix">Surname:</label>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l6">
+                                <div class="input-field inputVal_firstname">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input type="text" class="validate" id="firstname">
+                                    <span class="helper-text firstname_err"></span>
+                                    <label for="icon_prefix">First name:</label>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l6">
+                                <div class="input-field inputVal_reg">
+                                    <i class="material-icons prefix">assignment_ind</i>
+                                    <label for="RegNo">Enter Reg Number:</label>
+                                    <input type="text" id="reg_no" class="validate" maxlength="7" />
+                                    <span class="helper-text reg_err"></span>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l6">
+                                <div class="input-field inputVal_webmail">
+                                    <i class="material-icons prefix">assignment_ind</i>
+                                    <label for="webmail">Webmail:</label>
+                                    <input type="email" id="webmail" class="validate" />
+                                    <span class="helper-text webmail_err"></span>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l6">
+                                <div class="input-field">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <select name="member" id="member" style="margin: 0px;">
+                                        <option value="New Member">New Member</option>
+                                        <option value="Existing Member">Existing Member</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l6">
+                                <div class="input-field inputVal_reasons">
+                                    <i class="material-icons prefix"> bubble_chart</i>
+                                    <textarea id="reasons" class="materialize-textarea"></textarea>
+                                    <span class="helper-text reasons_err"></span>
+                                    <label for="reasons">
+                                        Reasons for joining
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l6">
+                                <div class="input-field inputVal_password">
+                                    <i class="material-icons prefix"> lock_outline</i>
+                                    <label htmlFor="password" class="active">
+                                        Enter Password:
+                                    </label>
+                                    <input type="password" id="pass" class="validate" />
+                                    <span class="helper-text pass_err"></span>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l6">
+                                <div class="input-field inputVal_checkPass">
+                                    <i class="material-icons prefix"> lock_outline</i>
+                                    <label htmlFor="checkPass" class="active">
+                                        Re-Type Password:
+                                    </label>
+                                    <input type="password" id="checkPass" class="validate" />
+                                    <span class="helper-text checkpass_err"></span>
+                                </div>
+                            </div>
+                            <div class="col s12">
+                                <span class="helper-text err center"></span>
+                            </div>
+
+                        </div>
+                        <button class="btn waves-effect waves-light green right large" id="submit">
+                            Sign Up
+                        </button>
+                        <span class="signup-loading"></span>
+                    </form>
                 </div>
             </div>
-            <div class="avatar">
-                <img src="../dist/img/avatar.svg" alt="user avatar" class="circle responsive-img" />
-            </div>
-            <div class="card-content">
-                <form action="">
-                    <div class="row">
-                        <div class="col s12 m6 l6">
-                            <div class="input-field inputVal">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input type="text" class="validate" id="surname">
-                                <span class="helper-text surname_err"></span>
-                                <label for="icon_prefix">Surname:</label>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l6">
-                            <div class="input-field inputVal_firstname">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input type="text" class="validate" id="firstname">
-                                <span class="helper-text firstname_err"></span>
-                                <label for="icon_prefix">First name:</label>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l6">
-                            <div class="input-field inputVal_reg">
-                                <i class="material-icons prefix">assignment_ind</i>
-                                <label for="RegNo">Enter Reg Number:</label>
-                                <input type="text" id="reg_no" class="validate" maxlength="7" />
-                                <span class="helper-text reg_err"></span>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l6">
-                            <div class="input-field inputVal_webmail">
-                                <i class="material-icons prefix">assignment_ind</i>
-                                <label for="webmail">Webmail:</label>
-                                <input type="email" id="webmail" class="validate" />
-                                <span class="helper-text webmail_err"></span>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l6">
-                            <div class="input-field">
-                                <i class="material-icons prefix">account_circle</i>
-                                <select name="member" id="member" style="margin: 0px;">
-                                    <option value="New Member">New Member</option>
-                                    <option value="Existing Member">Existing Member</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l6">
-                            <div class="input-field inputVal_reasons">
-                                <i class="material-icons prefix"> bubble_chart</i>
-                                <textarea id="reasons" class="materialize-textarea"></textarea>
-                                <span class="helper-text reasons_err"></span>
-                                <label for="reasons">
-                                    Reasons for joining
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l6">
-                            <div class="input-field inputVal_password">
-                                <i class="material-icons prefix"> lock_outline</i>
-                                <label htmlFor="password" class="active">
-                                    Enter Password:
-                                </label>
-                                <input type="password" id="pass" class="validate" />
-                                <span class="helper-text pass_err"></span>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l6">
-                            <div class="input-field inputVal_checkPass">
-                                <i class="material-icons prefix"> lock_outline</i>
-                                <label htmlFor="checkPass" class="active">
-                                    Re-Type Password:
-                                </label>
-                                <input type="password" id="checkPass" class="validate" />
-                                <span class="helper-text checkpass_err"></span>
-                            </div>
-                        </div>
-                        <div class="col s12">
-                            <span class="helper-text err center"></span>
-                        </div>
-
-                    </div>
-                    <button class="btn waves-effect waves-light green right large" id="submit">
-                        Sign Up
-                    </button>
-                    <span class="animsition-loading"></span>
-                </form>
-            </div>
         </div>
+        <!-- FORM FOR NEW MEMBER-->
+        <footer class="page-footer green">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Sanctuary Unit</h5>
+                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+                            content.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="https://lmu.edu.ng/">Landmark University.</a></li>
+                            <li><a class="grey-text text-lighten-3" href="http://webmail2.lmu.edu.ng">Webmail</a></li>
+                            <li><a class="grey-text text-lighten-3" href="http://att.lmu.edu.ng">Attendance Portal</a></li>
+                            <li><a class="grey-text text-lighten-3" href="http://www.hiddenhyve.org/">Hiiden Hyve</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2018 Sanctuary Unit
+                    <a class="grey-text text-lighten-4 right" href="http://www.hiddenhyve.org/">Powered By - Hidden
+                        Hyve.</a>
+                </div>
+            </div>
+        </footer>
     </div>
-    <!-- FORM FOR NEW MEMBER-->
-
     <!-- JAVASCRIPTS FILES HERE -->
     <script src="../dist/js/jquery.js"></script>
+    <script src="../dist/js/animsition.min.js"></script>
     <script src="../dist/js/materialize.min.js"></script>
     <script src="../dist/js/Animatecss.js"></script>
     <script src="../dist/js/Api.js"></script>
